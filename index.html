@@ -29,9 +29,9 @@
       const roomID = details.roomID; 
       const userID = details.userID || generateRandomUserId(20); 
       const userName = details.userName; 
-      const appID = details.appId;
+      const appID = parseInt(details.appId, 10);
       const serverSecret = details.secretKey;
-      const showScreenSharing = details.showScreenSharing;
+      const showScreenSharing = stringToBool(details.showScreenSharing);
 
       // Generate a Kit Token by calling a method.
       const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);
@@ -86,7 +86,9 @@
         initZego(event.data.details);
       }
     });
-
+    function stringToBool(str) {
+  return str.toLowerCase() === 'true';
+}
     // // Dispatch the custom event to initialize Zego if needed
     // document.addEventListener('DOMContentLoaded', function() {
     //   var event = new CustomEvent('init_zego');
