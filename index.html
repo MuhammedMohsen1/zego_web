@@ -66,6 +66,8 @@
         },
         onUserJoin: () => {
           console.log("onUserJoin");
+          window.parent.onUserJoin();
+          console.log("userJoined");
         },
         onUserLeave: () => {
           console.log("onUserLeave");
