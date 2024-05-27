@@ -54,24 +54,25 @@
         showLeaveRoomConfirmDialog: false,
         onJoinRoom: () => {
           console.log("onJoinRoom");
-          window.parent.postMessage({ type: 'userJoin' }, '*');
+          window.parent.postMessage({ type: 'onJoinRoom' }, '*');
           console.log("message sent");
         },
         onLeaveRoom: () => {
           console.log("Left the room");
+          window.parent.postMessage({ type: 'onLeaveRoom' }, '*');
+          console.log("message sent");
         },
-        onLiveStart: () => {
-          console.log("onLiveStart");
-        },
-        onLiveEnd: () => {
-          console.log("onLiveEnd");
-        },
+       
         onUserJoin: () => {
           console.log("onUserJoin");
+          window.parent.postMessage({ type: 'onUserJoin' }, '*');
+          console.log("message sent");
         
         },
         onUserLeave: () => {
           console.log("onUserLeave");
+          window.parent.postMessage({ type: 'onUserLeave' }, '*');
+          console.log("message sent");
         },
       });
     }
