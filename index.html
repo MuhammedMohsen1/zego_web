@@ -74,7 +74,9 @@
     }
 
     window.addEventListener('message', function(event) {
+      console.log("event happened");
       if (event.data && event.data.type === 'init_zego') {
+        console.log("init_zego is triggered");
         initZego(event.data.details);
       }
     });
