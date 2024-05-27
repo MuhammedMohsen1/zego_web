@@ -31,9 +31,9 @@
       const roomID = details.roomID; 
       const userID = details.userID || generateRandomUserId(20); 
       const userName = details.userName; 
-      const appID = parseInt(details.appId, 10);
-      const serverSecret = details.secretKey;
-      const showScreenSharing = stringToBool(details.showScreenSharing);
+      const appID = 1588161922;
+      const serverSecret = "13c5fcf0857cd10bb582b2866e169cf269ed115e1235fda3be39bd44d9c0bc84";
+      const showScreenSharing = false;
       // Log all parameters and their data types
       console.log("roomID:", roomID, "Type:", typeof roomID);
       console.log("userID:", userID, "Type:", typeof userID);
@@ -57,7 +57,7 @@
         turnOnCameraWhenJoining: true,
         showMyCameraToggleButton: true,
         showAudioVideoSettingsButton: true,
-        showScreenSharingButton: showScreenSharing,
+        showScreenSharingButton: false,
         screenSharingConfig: {
           resolution: ZegoUIKitPrebuilt.ScreenSharingResolution_720P
         },
