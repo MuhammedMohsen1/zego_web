@@ -28,8 +28,9 @@
       const roomID = details.roomID; 
       const userID = details.userID || generateRandomUserId(20); 
       const userName = details.userName; 
-      const appID = 1588161922;
-      const serverSecret = "70b700b662f12e892602c841ce7d648a"; 
+      const appID = details.appId;
+      const serverSecret = details.secretKey;
+      const showScreenSharing = details.showScreenSharing;
 
       // Generate a Kit Token by calling a method.
       const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);
@@ -46,7 +47,7 @@
         turnOnCameraWhenJoining: true,
         showMyCameraToggleButton: true,
         showAudioVideoSettingsButton: true,
-        showScreenSharingButton: true,
+        showScreenSharingButton: showScreenSharing,
         screenSharingConfig: {
           resolution: ZegoUIKitPrebuilt.ScreenSharingResolution_720P
         },
