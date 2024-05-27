@@ -66,7 +66,7 @@
         },
         onUserJoin: () => {
           console.log("onUserJoin");
-          window.parent.onUserJoin();
+          window.parent.postMessage({ type: 'userJoin' }, '*');
           console.log("userJoined");
         },
         onUserLeave: () => {
