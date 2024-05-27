@@ -23,10 +23,10 @@
     }
 
     // Function to initialize Zego
-    function initZego() {
-      const roomID = "a3a18429-3159-40d7-9a21-594e4fe8cb4c"; // Replace with your room ID
-      const userID = generateRandomUserId(20); // Replace with your user ID logic
-      const userName = "consult test"; // Replace with user's display name
+    function initZego(details) {
+      const roomID = details.roomID; 
+      const userID = details.userID || generateRandomUserId(20); 
+      const userName = details.userName; 
       const appID = 1588161922;
       const serverSecret = "70b700b662f12e892602c841ce7d648a"; 
 
@@ -75,7 +75,7 @@
     // Listen for messages from the parent window
     window.addEventListener('message', function(event) {
       if (event.data === 'init_zego') {
-        initZego();
+        initZego(event.data.details);
       }
     });
 
