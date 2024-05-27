@@ -22,7 +22,9 @@
       }
       return result;
     }
-
+    function stringToBool(str) {
+  return str.toLowerCase() === 'true';
+}
     // Function to initialize Zego
     function initZego(details) {
       console.log("Initializing Zego with details:", details);
@@ -32,6 +34,13 @@
       const appID = parseInt(details.appId, 10);
       const serverSecret = details.secretKey;
       const showScreenSharing = stringToBool(details.showScreenSharing);
+      // Log all parameters and their data types
+      console.log("roomID:", roomID, "Type:", typeof roomID);
+      console.log("userID:", userID, "Type:", typeof userID);
+      console.log("userName:", userName, "Type:", typeof userName);
+      console.log("appID:", appID, "Type:", typeof appID);
+      console.log("serverSecret:", serverSecret, "Type:", typeof serverSecret);
+      console.log("showScreenSharing:", showScreenSharing, "Type:", typeof showScreenSharing);
 
       // Generate a Kit Token by calling a method.
       const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);
@@ -86,9 +95,7 @@
         initZego(event.data.details);
       }
     });
-    function stringToBool(str) {
-  return str.toLowerCase() === 'true';
-}
+
     // // Dispatch the custom event to initialize Zego if needed
     // document.addEventListener('DOMContentLoaded', function() {
     //   var event = new CustomEvent('init_zego');
