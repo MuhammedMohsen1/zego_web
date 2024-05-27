@@ -13,34 +13,34 @@
   <script>
     var zp;
     
-    // Function to generate a random user ID
-    function generateRandomUserId(length) {
-      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      var result = '';
-      for (var i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() * characters.length));
-      }
-      return result;
-    }
-    function stringToBool(str) {
-  return str.toLowerCase() === 'true';
-}
+    // // Function to generate a random user ID
+    // function generateRandomUserId(length) {
+    //   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    //   var result = '';
+    //   for (var i = 0; i < length; i++) {
+    //     result += characters.charAt(Math.floor(Math.random() * characters.length));
+    //   }
+    //   return result;
+    // }
+//     function stringToBool(str) {
+//   return str.toLowerCase() === 'true';
+// }
     // Function to initialize Zego
     function initZego(details) {
       console.log("Initializing Zego with details:", details);
-      const roomID = details.roomID; 
-      const userID = details.userID || generateRandomUserId(20); 
+      const roomID = 'details.roomID'; 
+      const userID = generateRandomUserId(20); 
       const userName = details.userName; 
       const appID = 1588161922;
       const serverSecret = "13c5fcf0857cd10bb582b2866e169cf269ed115e1235fda3be39bd44d9c0bc84";
       const showScreenSharing = false;
-      // Log all parameters and their data types
-      console.log("roomID:", roomID, "Type:", typeof roomID);
-      console.log("userID:", userID, "Type:", typeof userID);
-      console.log("userName:", userName, "Type:", typeof userName);
-      console.log("appID:", appID, "Type:", typeof appID);
-      console.log("serverSecret:", serverSecret, "Type:", typeof serverSecret);
-      console.log("showScreenSharing:", showScreenSharing, "Type:", typeof showScreenSharing);
+      // // Log all parameters and their data types
+      // console.log("roomID:", roomID, "Type:", typeof roomID);
+      // console.log("userID:", userID, "Type:", typeof userID);
+      // console.log("userName:", userName, "Type:", typeof userName);
+      // console.log("appID:", appID, "Type:", typeof appID);
+      // console.log("serverSecret:", serverSecret, "Type:", typeof serverSecret);
+      // console.log("showScreenSharing:", showScreenSharing, "Type:", typeof showScreenSharing);
 
       // Generate a Kit Token by calling a method.
       const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);
