@@ -73,18 +73,17 @@
       });
     }
 
-    // Listen for messages from the parent window
     window.addEventListener('message', function(event) {
-      if (event.data === 'init_zego') {
+      if (event.data && event.data.type === 'init_zego') {
         initZego(event.data.details);
       }
     });
 
-    // Dispatch the custom event to initialize Zego if needed
-    document.addEventListener('DOMContentLoaded', function() {
-      var event = new CustomEvent('init_zego');
-      document.dispatchEvent(event);
-    });
+    // // Dispatch the custom event to initialize Zego if needed
+    // document.addEventListener('DOMContentLoaded', function() {
+    //   var event = new CustomEvent('init_zego');
+    //   document.dispatchEvent(event);
+    // });
 
   </script>
 </body>
