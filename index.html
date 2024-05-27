@@ -53,9 +53,9 @@
         showLeavingView: false,
         showLeaveRoomConfirmDialog: false,
         onJoinRoom: () => {
-          console.log("Joined the room");
-          window.parent.postMessage({ type: 'userJoin' }, '*');
           console.log("onJoinRoom");
+          window.parent.postMessage({ type: 'userJoin' }, '*');
+          console.log("message sent");
         },
         onLeaveRoom: () => {
           console.log("Left the room");
