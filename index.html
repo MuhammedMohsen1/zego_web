@@ -71,8 +71,8 @@
         
         },
         onUserLeave: (userDetails) => {
-          console.log("onUserLeave",userDetails);
-          window.parent.postMessage({ type: 'onUserLeave' }, '*');
+          console.log("onUserLeave",userDetails.map((e)=>e.userName));
+          window.parent.postMessage({ type: 'onUserLeave',userDetails: userDetails.map((e)=>e.userName)}, '*');
           console.log("message sent");
         },
       });
