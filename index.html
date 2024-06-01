@@ -61,8 +61,8 @@
         onLeaveRoom: () => {
           console.log("Left the room");
           window.parent.postMessage({ type: 'onLeaveRoom' }, '*');
-          console.log("message sent");
           zp.destroy();
+          console.log("message sent");
         },
        
         onUserJoin: () => {
@@ -74,8 +74,11 @@
         onUserLeave: (userDetails) => {
           console.log("onUserLeave",userDetails[0].userName);
           window.parent.postMessage({ type: 'onUserLeave',userDetails: userDetails[0].userName}, '*');
-          zp.destroy();
           console.log("message sent");
+          if (userDetails[0].userName !== 'SUPPORT') {
+            zp.destroy();
+          }
+
         },
       });
     }
