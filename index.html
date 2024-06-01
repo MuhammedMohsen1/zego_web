@@ -70,8 +70,8 @@
           console.log("message sent");
         
         },
-        onUserLeave: () => {
-          console.log("onUserLeave");
+        onUserLeave: (userDetails) => {
+          console.log("onUserLeave",userDetails);
           window.parent.postMessage({ type: 'onUserLeave' }, '*');
           console.log("message sent");
         },
